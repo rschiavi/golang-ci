@@ -2,12 +2,12 @@ steps:
 
   - id: "Executando teste unitario"
     name: 'gcr.io/cloud-builders/go:alpine'
-    args: ['go', 'test', 'soma']
+    args: ['test', 'soma']
     env: ['GOPATH=.']
 
   - id: "Compilando app"
     name: 'gcr.io/cloud-builders/go:alpine'
-    args: ['go', 'build', '-ldflags="-s -w"', 'soma']
+    args: ['build', 'soma']
     env: ['GOPATH=.']
 
   - id: "Gerando imagem"
